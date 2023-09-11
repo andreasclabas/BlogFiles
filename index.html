@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Andrea Sclabas Blog</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <header class="header group">
+        <a href="" class="header__logo">Logo</a>
+        <a href="" class="header__icon-bar">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+        <ul class="header__menu animate">
+            <li class="header__menu__item"><a href="">Item</a></li>
+            <li class="header__menu__item"><a href="">Item</a></li>
+            <li class="header__menu__item"><a href="">Item</a></li>
+            <li class="header__menu__item"><a href="">Item</a></li>
+            <li class="header__menu__item"><a href="">Item</a></li>
+
+        </ul>
+    </header>
+</head>
+
+<body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        $( document ).ready(function() {
+            $(".header__icon-bar").click(function(e) {
+                $(".header__menu").toggleClass('is-open');
+                e.preventDefault();
+            })
+        });
+    </script>
+</body>
+</html>
