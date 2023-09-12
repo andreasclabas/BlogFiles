@@ -1,21 +1,43 @@
-body {
-  background-color: #eee;
-}
+html, body {height: 100%;}
+body { background-color: #eee; }
 
+/*--------------------------
+General
+--------------------------*/
 .animate {
   -webkit-transition: all 0.3s ease-out;
           transition: all 0.3s ease-out;
 }
+
+.button {display: inline-block; background-color: #fff; color: #000; text-decoration: none; padding: 15px 30px; border-radius: 3px;}
+/*--------------------------
+Header
+--------------------------*/
 .header {background-color: #333}
-.header__logo {color: #fff; float: left; color: #fff; display: block;padding: 20px;}
+.header__logo {color: #fff; float: left; display: block;padding: 20px; text-decoration: none;}
 .header__menu {float: right; margin: 0; padding: 0;}
 .header__menu__item {display: inline-block;}
-.header__menu__item a{color: #fff; display: block;padding: 20px;}
+.header__menu__item a{color: #fff; display: block;padding: 20px; text-decoration: none}
 .header__menu__item a:hover{background-color: #000;}
-
 .header__icon-bar {float: right;padding: 20px;display: none;}
 .header__icon-bar span{display: block; height: 3px; width: 30px;background-color: #fff; margin-bottom: 5px;}
 
+/*--------------------------
+Cover
+--------------------------*/
+.cover {
+  height: 70%;
+  background-image: url("cover.jpg");
+  background-position: center;
+  background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  position: relative;
+}
+
+.cover__caption__filter { background-color: #000; height: 100%; width: 100%; position: absolute; opacity: 50%; z-index: 0; }
+.cover__caption { display: table; height: 100%; width: 100%; padding: 20px;}
+.cover__caption__copy { display: table-cell; vertical-align: middle; text-align: center; color: #fff; position: relative; z-index: 1; }
 
 /*--------------------------
 Tablet
@@ -29,9 +51,14 @@ Tablet
 Smartphone
 --------------------------*/
 @media (max-width: 767px) {
+  .header {position: fixed; z-index: 100; width: 100%;}
+
   .header__icon-bar {display: block;}
   .header__menu {width: 100%;height: 0px;overflow: hidden;}
   .header__menu__item {display: block;}
+
+  .cover {height: 100%;}
+
   .is-open {height: 300px; overflow: auto;}
 }
 
@@ -41,4 +68,12 @@ Smartphone
   content: "";
   display: table;
   clear: both;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
